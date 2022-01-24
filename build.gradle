@@ -104,7 +104,8 @@ class FilteredConfigureShadowRelocation extends ConfigureShadowRelocation {
                 target.relocate(pkg, "${prefix}.${pkg}")
             }
         }
-
+        // relocate kafka classpaths
+        target.relocate("org.apache.kafka", "kafkashaded.org.apache.kafka")
     }
 }
 
